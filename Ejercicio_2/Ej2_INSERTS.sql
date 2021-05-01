@@ -60,10 +60,11 @@ WHILE @fila >= 1 AND @fila <= 1000
 		INSERT INTO [dbo].PRODUCTO ([MarcaId], [TipoProductoId], [Descripcion], [Talle], [Color], [Precio], [Stock])
 		VALUES (CASE WHEN @fila <= 500 THEN 1
 					ELSE 2
-					END, 7, 'CAMISETA STYLE art. '+ CONVERT(NVARCHAR(MAX),@artNum), @talla, CASE WHEN @segundos % 2 = 0 THEN 'Azul'
-																								WHEN @segundos %2 != 0 THEN 'Blanco'
-																								WHEN @segundos = 0 THEN 'Rojo'
-																								END, @precio, @numStock);
+					END, 7, 'CAMISETA STYLE art. '+ CONVERT(NVARCHAR(MAX),@artNum), @talla, CASE 
+                                                                                            WHEN @segundos % 2 = 0 THEN 'Azul'
+																							WHEN @segundos %2 != 0 THEN 'Blanco'
+																							WHEN @segundos = 0 THEN 'Rojo'
+																							END, @precio, @numStock);
 		SET @fila = @fila + 1;
 	END
 
