@@ -44,7 +44,7 @@ DECLARE @tallaRandom AS int;
 DECLARE @talla AS VARCHAR(2);
 DECLARE @segundos AS int;
 DECLARE @numStock AS int;
-DECLARE @precio AS int;
+DECLARE @precio AS FLOAT;
 
 
 DECLARE @fila int = 1
